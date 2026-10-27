@@ -1,0 +1,15 @@
+{
+	"name": "VijayyadavDfactoryProject",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6e4afe4f-8617-49b1-9bd5-97090d90a588",
+		"tenantId": "20f4e761-4532-4821-8314-6928b98f8c43"
+	}
+}

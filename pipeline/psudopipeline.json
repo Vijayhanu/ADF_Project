@@ -1,0 +1,68 @@
+{
+	"name": "psudopipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Migrateonpremfiles",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"value": "@json('\"translator\": {\n            \"type\": \"TabularTranslator\",\n            \"mappings\": [\n                {\n                    \"source\": {\n                        \"name\": \"flight_id\",\n…            }\n        }')",
+						"type": "Expression"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_onprem_src_param",
+						"type": "DatasetReference",
+						"parameters": {
+							"p_file_name": "DimFlight.csv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_onprem_file",
+						"type": "DatasetReference",
+						"parameters": {
+							"p_filename": "DimFlight.csv"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-10-17T13:02:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
