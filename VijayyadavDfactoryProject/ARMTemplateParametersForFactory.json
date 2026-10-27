@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "VijayyadavDfactoryProject"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSql_password": {
+			"value": ""
+		},
+		"ls_onprem_files_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adfvijaystorage.dfs.core.windows.net/"
+		},
+		"AzureSql_properties_typeProperties_server": {
+			"value": "adfprojectviji.database.windows.net"
+		},
+		"AzureSql_properties_typeProperties_database": {
+			"value": "adfprojectviji"
+		},
+		"AzureSql_properties_typeProperties_userName": {
+			"value": "adfproject"
+		},
+		"ls_github_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"ls_onprem_files_properties_typeProperties_host": {
+			"value": "C:\\ADF-Project-Source"
+		},
+		"ls_onprem_files_properties_typeProperties_userId": {
+			"value": "vijaykrishna5@outlook.com"
+		}
+	}
+}
